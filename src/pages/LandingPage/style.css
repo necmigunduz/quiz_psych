@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding: 150px;
+    background-color:cadetblue;
+}
+
+.header {
+    font-size: 45px;
+}
+
+.text {
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+}
+
+.link {
+    margin-top: 50px;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: darkblue;
+}
