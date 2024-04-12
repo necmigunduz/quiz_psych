@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    results: []
-};
+  results: [],
+}
 
 const resultSlice = createSlice({
-    name: 'resultSlice',
-    initialState,
-    reducers: {
-        setResults: (state, action) => {
-            state.results.push(action.payload)
-        },
+  name: 'resultSlice',
+  initialState,
+  reducers: {
+    setResults: (state, action) => {
+      state.results.push(action.payload)
     },
-    extraReducers: {},
-});
+  },
+  extraReducers: {},
+})
 
-export const { setResults } = resultSlice.actions;
+export const { setResults } = resultSlice.actions
 
-export default resultSlice.reducer;
+export default resultSlice.reducer

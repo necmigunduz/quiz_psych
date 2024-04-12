@@ -1,24 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    questions: [],
-    questionIndex: 0,
+  questions: [],
+  questionIndex: 0,
 }
 
 const questionsSlice = createSlice({
-    name: 'questions',
-    initialState,
-    reducers: {
-        setQuestions: (state, action) => {
-            state.questions = action.payload
-        },
-        setQuestionIndex: (state, action) => {
-            state.questionIndex = action.payload
-        }
+  name: 'questions',
+  initialState,
+  reducers: {
+    setQuestions: (state, action) => {
+      state.questions = action.payload
     },
-    extraReducers: {},
-});
+    setQuestionIndex: (state, action) => {
+      state.questionIndex = action.payload
+    },
+  },
+  extraReducers: {},
+})
 
-export const {setQuestions, setQuestionIndex} = questionsSlice.actions;
+export const { setQuestions, setQuestionIndex } = questionsSlice.actions
 
-export default questionsSlice.reducer;
+export default questionsSlice.reducer
