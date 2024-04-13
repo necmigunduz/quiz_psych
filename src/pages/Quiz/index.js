@@ -5,11 +5,14 @@ import {
   selectQuestionIndex,
   selectQuestions,
 } from '../../redux/slices/questions/selectors'
-import { resetQuestionsSlice, setQuestionIndex } from '../../redux/slices/questions/questionsSlice'
+import {
+  resetQuestionsSlice,
+  setQuestionIndex,
+} from '../../redux/slices/questions/questionsSlice'
 import { resetResultSlice, setResults } from '../../redux/slices/result/resultSlice'
 import { useNavigate } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
-// import { selectAnswers } from '../../redux/slices/result/selectors'
+import { selectAnswers } from '../../redux/slices/result/selectors'
 
 const Quiz = () => {
   const dispatch = useDispatch()
@@ -17,7 +20,7 @@ const Quiz = () => {
   const questions = useSelector(selectQuestions)
   const questionIndex = useSelector(selectQuestionIndex)
   const question = questions[questionIndex]
-  // const answers = useSelector(selectAnswers)
+  const answers = useSelector(selectAnswers)
 
   const handleOption = ({ value, text }) => {
     dispatch(
@@ -31,10 +34,16 @@ const Quiz = () => {
   }
 
   const handleNext = () => {
-    if (questions.length > questionIndex + 1) {
-      dispatch(setQuestionIndex(questionIndex + 1))
+    const hasQuestionAnswered = answers.some(answer => answer.question.id === question.id)
+    console.log('Answered?', hasQuestionAnswered)
+    if (hasQuestionAnswered) {
+      if (questions.length > questionIndex + 1) {
+        dispatch(setQuestionIndex(questionIndex + 1))
+      } else {
+        navigate('/result')
+      }
     } else {
-      navigate('/result')
+      alert("You need to select an option to continue!")
     }
   }
 
