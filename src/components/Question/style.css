@@ -1,0 +1,11 @@
+.optionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.selectedOption {
+    color: white;
+    background-color: darkgrey;
+}

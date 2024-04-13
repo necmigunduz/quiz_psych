@@ -1,13 +1,18 @@
 import React from 'react'
+import './style.css'
 
-const Question = ({ question, handleOption, handleNext, handleBack }) => {
+const Question = ({ question, handleOption, handleNext, handleBack, selected }) => {
   return (
     <div>
       <h2>{question.title}</h2>
       <p>{question.question}</p>
       {question.options.map((option, index) => (
-        <div key={index}>
-          <button onClick={() => handleOption(option)}>{option.text}</button>
+        <div key={index} className="optionContainer">
+          <button
+            onClick={() => handleOption(option)}
+            className={selected === option.text ? 'selectedOption' : ''}>
+            {option.text}
+          </button>
         </div>
       ))}
       <button onClick={handleBack}>Go to previous</button>

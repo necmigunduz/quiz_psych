@@ -1,0 +1,36 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  top: 10%;
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.warningText {
+  color: black;
+}
+
+.button-x {
+  border: 1px transparent solid;
+  font-weight: bold;
+}
+
+.button-x:hover {
+  color: grey;
+  cursor: pointer;
+}

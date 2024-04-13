@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Question from '../../components/Question'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -13,6 +13,7 @@ import { resetResultSlice, setResults } from '../../redux/slices/result/resultSl
 import { useNavigate } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
 import { selectAnswers } from '../../redux/slices/result/selectors'
+import WarningModal from '../../components/WarningModal'
 
 const Quiz = () => {
   const dispatch = useDispatch()
@@ -21,8 +22,11 @@ const Quiz = () => {
   const questionIndex = useSelector(selectQuestionIndex)
   const question = questions[questionIndex]
   const answers = useSelector(selectAnswers)
+  const [showWarning, setShowWarning] = useState(false)
+  const [selectedOption, setSelectedOption] = useState('')
 
   const handleOption = ({ value, text }) => {
+    setSelectedOption(text)
     dispatch(
       setResults({
         index: questionIndex,
@@ -33,6 +37,7 @@ const Quiz = () => {
     )
   }
 
+  console.log("ANSWERS", answers, "QUESTION", question)
   const handleNext = () => {
     const hasQuestionAnswered = answers.some(answer => answer.question.id === question.id)
     console.log('Answered?', hasQuestionAnswered)
@@ -42,8 +47,9 @@ const Quiz = () => {
       } else {
         navigate('/result')
       }
+      setShowWarning(false)
     } else {
-      alert("You need to select an option to continue!")
+      setShowWarning(true)
     }
   }
 
@@ -55,18 +61,28 @@ const Quiz = () => {
       dispatch(resetResultSlice())
       navigate('/')
     }
+    setShowWarning(false)
   }
 
   return (
-    <div>
-      <SideBar />
-      <Question
-        question={question}
-        handleOption={handleOption}
-        handleNext={handleNext}
-        handleBack={handleBack}
-      />
-    </div>
+    <>
+      <div>
+        <SideBar />
+        <Question
+          question={question}
+          handleOption={handleOption}
+          handleNext={handleNext}
+          handleBack={handleBack}
+          selected={selectedOption}
+        />
+      </div>
+      {showWarning && (
+        <WarningModal
+          warningtext={'You need to select an option!'}
+          onClose={() => setShowWarning(false)}
+        />
+      )}
+    </>
   )
 }
 
