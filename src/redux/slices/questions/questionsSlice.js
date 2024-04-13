@@ -15,10 +15,12 @@ const questionsSlice = createSlice({
     setQuestionIndex: (state, action) => {
       state.questionIndex = action.payload
     },
-  },
-  extraReducers: {},
+    resetQuestionsSlice: () => {
+      return initialState
+    },
+  }
 })
 
-export const { setQuestions, setQuestionIndex } = questionsSlice.actions
+export const { setQuestions, setQuestionIndex, resetQuestionsSlice } = questionsSlice.actions
 
 export default questionsSlice.reducer

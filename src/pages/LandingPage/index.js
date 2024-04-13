@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
+import { useDispatch } from 'react-redux'
+import { setQuestions } from '../../redux/slices/questions/questionsSlice'
+import Questions from '../../questions'
 
 function LandingPage() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(setQuestions(Questions))
+  })
+
   return (
     <div className='container'>
       <h3 className='header'>Welcome to Introvert vs. Extrovert Psychology Quiz</h3>
@@ -20,7 +28,7 @@ function LandingPage() {
         </ul>
 
       </article>
-      <Link to={'/quiz'} className='link'>Take the quiz</Link>
+      <Link to={'/quiz'} className='link' >Take the quiz</Link>
     </div>
   )
 }
