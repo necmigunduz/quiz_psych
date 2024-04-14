@@ -23,7 +23,7 @@ This web app is prepared for developing a sense of quiztakers' personality wheth
 - `npm run start`
 
 ## Deployed Version of App on Netlify
-- Netlify link: [Netlify](https://psychquiz.netlify.app/)
+- [Netlify Link](https://psychquiz.netlify.app/)
 
 ## Author
 
