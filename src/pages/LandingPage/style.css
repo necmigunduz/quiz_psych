@@ -35,3 +35,16 @@
     background-color: darkslategray;
     border-color: darkslategray;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 10%;
+        padding: 10%;
+        background-color:cadetblue;
+        border-radius: 50px;
+    }
+}

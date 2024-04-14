@@ -13,7 +13,7 @@ const SideBar = () => {
 
   return (
     <div className='sideContainer'>
-        <h3>Quiz Sections</h3>
+        <h3 className='sideHeader'>Sections</h3>
         {questions.map((question, index) => {
             return (
                 <p key={index} className={question.title === currentQuestion.title ? 'currentTitle' : 'side'}>{question.title}</p>

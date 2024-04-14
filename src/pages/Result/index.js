@@ -25,14 +25,14 @@ function Result() {
   
   return (
     <div className='resultContainer'>
-      <h2>YOUR ANSWERS</h2>
+      <h3>YOUR ANSWERS</h3>
       {answers.map((answer, index) => (
         <div key={index} className='yourAnswers'>
         <h4>{answer.question.question}</h4>
         <p>{answer.option}</p>
         </div>
       ))}
-      <h2>RESULT</h2>
+      <h3>RESULT</h3>
       <p>Your personality type is more <strong><i>{sum > threshHold ? 'extrovert' : 'introvert'}</i></strong>.</p>
       <button className='homeBtn' onClick={handleGoHome}>Retake Extrovert vs. Introvert Quiz</button>
     </div>

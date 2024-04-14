@@ -9,3 +9,16 @@
 .currentTitle {
     font-weight: bold;
 }
+
+.sideHeader {
+    color: darkorchid;
+}
+
+@media screen and (max-width: 600px) {
+    .sideContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 10%;
+    }
+}
