@@ -1,20 +1,22 @@
 import React from 'react'
+import './style.css'
 import { useSelector } from 'react-redux'
 import {
-  //selectQuestionIndex,
+  selectQuestionIndex,
   selectQuestions,
 } from '../../redux/slices/questions/selectors'
 
 const SideBar = () => {
   const questions = useSelector(selectQuestions)
-  //const questionIndex = useSelector(selectQuestionIndex)
+  const questionIndex = useSelector(selectQuestionIndex)
+  const currentQuestion = questions[questionIndex]
 
   return (
-    <div>
-        <h3>Side Bar</h3>
+    <div className='sideContainer'>
+        <h3>Quiz Sections</h3>
         {questions.map((question, index) => {
             return (
-                <p key={index}>{question.title}</p>
+                <p key={index} className={question.title === currentQuestion.title ? 'currentTitle' : 'side'}>{question.title}</p>
             )
         })}
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './style.css'
 import Question from '../../components/Question'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -63,7 +64,7 @@ const Quiz = () => {
 
   return (
     <>
-      <div>
+      <div className="quizContainer">
         <SideBar />
         <Question
           question={question}

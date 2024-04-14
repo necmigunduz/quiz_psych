@@ -1,0 +1,11 @@
+.sideContainer {
+    min-width: 150px;
+    margin-left: 3%;
+}
+.side {
+    font-size: 12px;
+}
+
+.currentTitle {
+    font-weight: bold;
+}

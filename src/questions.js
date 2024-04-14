@@ -38,7 +38,7 @@ const Questions = [
     id: 3,
     question:
       'When given a choice between working as part of a team or working as a group, I would prefer to:',
-    title: 'Being a part of a team',
+    title: 'Teamwork',
     options: [
       { id: 1, text: 'Work alone.', value: 0 },
       { id: 2, text: 'Maybe one more collegue with me.', value: 1 },
