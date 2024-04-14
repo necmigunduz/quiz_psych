@@ -37,11 +37,8 @@ const Quiz = () => {
     )
   }
 
-  console.log("ANSWERS", answers, "QUESTION", question)
   const handleNext = () => {
-    const hasQuestionAnswered = answers.some(answer => answer.question.id === question.id)
-    console.log('Answered?', hasQuestionAnswered)
-    if (hasQuestionAnswered) {
+    if (answers[questionIndex]) {
       if (questions.length > questionIndex + 1) {
         dispatch(setQuestionIndex(questionIndex + 1))
       } else {
