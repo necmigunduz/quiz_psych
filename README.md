@@ -2,7 +2,7 @@
 
 This web app is prepared for developing a sense of quiztakers' personality whether they are more introverts or more extroverts.
 
-![screenshot](https://github.com/necmigunduz/react-tic-tac-toe/blob/master/assets/screenshot.png)
+![screenshot](https://github.com/necmigunduz/quiz_psych/blob/master/src/screenShot/screen_shot.png)
 
 ## Built With
 
@@ -17,13 +17,13 @@ This web app is prepared for developing a sense of quiztakers' personality wheth
 
 ## Getting Started
 
-- `git clone git@github.com:necmigunduz/react-tic-tac-toe.git`
-- `cd react-tic-tac-toe`
+- `git clone git@github.com:necmigunduz/quiz_psych.git`
+- `cd quiz_psych`
 - `npm install`
-- `npm start`
+- `npm run start`
 
 ## Deployed Version of App on Netlify
-- Netlify link: [Netlify](https://tic-tac-toe-react-necm.netlify.app/)
+- Netlify link: [Netlify](https://psychquiz.netlify.app/)
 
 ## Author
 
