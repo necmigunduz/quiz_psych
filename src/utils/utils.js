@@ -1,0 +1,1 @@
+export const sumValues = (answers) => answers.reduce((total, answer) => total + answer.value, 0)

@@ -9,10 +9,10 @@ const resultSlice = createSlice({
   initialState,
   reducers: {
     setResults: (state, action) => {
-      const { index, value,  question, option } = action.payload
+      const { index } = action.payload
       const existingAnswerIndex = state.answers.findIndex(item => item.index === index)
       if (existingAnswerIndex !== -1) {
-        state.answers[existingAnswerIndex] = { index: index, value: value, question: question.question, option: option  }
+        state.answers[existingAnswerIndex] = action.payload
       } else {
         state.answers.push(action.payload)
       }

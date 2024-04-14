@@ -6,6 +6,7 @@
     margin: 50px;
     padding: 100px;
     background-color:cadetblue;
+    border-radius: 5%;
 }
 
 .header {
@@ -27,6 +28,7 @@
     background-color: black;
     color: white;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .link:hover {
